@@ -30,6 +30,11 @@ export function initFiltering(elements, indexes) {
         }
         // @todo: #4.2 — обработать очистку поля
 
+    const from = state.totalFrom ? parseInt(state.totalFrom) : undefined;
+    const to = state.totalTo ? parseInt(state.totalTo) : undefined;
+
+    state.total = [from, to];
+
         // @todo: #4.5 — отфильтровать данные используя компаратор
         return data.filter(row => compare(row, state));
     }
